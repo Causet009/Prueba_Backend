@@ -1,29 +1,57 @@
-<h1>Cine Norte</h1>
+{% extends 'base.html' %}
 
-<p>
-    {{ peliculas|length }} peliculas,
-    {{ cantidad_estrenos }} estrenos,
-    duracion promedio {{ duracion_promedio }} min
-</p>
+{% block titulo %}
+Cartelera | Cine Norte
+{% endblock %}
 
-{% for p in peliculas %}
+{% block contenido %}
 
-    <div>
-        <p>{{ p.genero|upper }}</p>
+<h2>Peliculas en cartelera</h2>
+
+<div class="resumen">
+
+    <strong>{{ peliculas|length }} peliculas</strong>
+
+    <p>
+        {{ cantidad_estrenos }} estrenos,
+        duracion promedio {{ duracion_promedio }} min
+    </p>
+
+</div>
+
+<div class="cartelera">
+
+    {% for p in peliculas %}
+
+    <div class="pelicula">
+
+        <p class="genero">
+            {{ p.genero|upper }}
+        </p>
 
         <h2>{{ p.titulo }}</h2>
 
         <p>
-            ${{ p.precio }} - {{ p.duracion }} min
+            Duracion: {{ p.duracion }} min
         </p>
 
-        <a href="{% url 'cartelera:detalle' p.id %}">
+        <p class="precio">
+            ${{ p.precio }}
+        </p>
+
+        <a class="boton"
+           href="{% url 'cartelera:detalle' p.id %}">
             Ver detalles
         </a>
+
     </div>
 
-{% empty %}
+    {% empty %}
 
     <p>No hay peliculas disponibles.</p>
 
-{% endfor %}
+    {% endfor %}
+
+</div>
+
+{% endblock %}

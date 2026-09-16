@@ -1,29 +1,64 @@
-<a href="{% url 'cartelera:inicio' %}">
-    Volver al inicio
+{% extends 'base.html' %}
+
+{% block titulo %}
+{{ pelicula.titulo }} | Cine Norte
+{% endblock %}
+
+{% block contenido %}
+
+<a class="boton"
+   href="{% url 'cartelera:inicio' %}">
+    Volver a cartelera
 </a>
 
-<h1>{{ pelicula.titulo }}</h1>
+<div class="detalle">
 
-<p>{{ etiqueta }}</p>
+    <p class="genero">
+        {{ pelicula.genero|upper }}
+    </p>
 
-<p>Genero: {{ pelicula.genero }}</p>
+    <h2>{{ pelicula.titulo }}</h2>
 
-<p>Precio entrada: ${{ pelicula.precio }}</p>
+    <p class="etiqueta">
+        {{ etiqueta }}
+    </p>
 
-<p>Funcion nocturna: ${{ precio_nocturno }}</p>
+    <p>
+        <strong>Genero:</strong>
+        {{ pelicula.genero }}
+    </p>
 
-<p>Duracion: {{ pelicula.duracion }} minutos</p>
+    <p>
+        <strong>Duracion:</strong>
+        {{ pelicula.duracion }} minutos
+    </p>
 
-<p>
-    Estreno:
-    {{ pelicula.estreno|yesno:"Si,No" }}
-</p>
+    <p>
+        <strong>Precio entrada:</strong>
+        ${{ pelicula.precio }}
+    </p>
 
-<p>
-    Apta todo publico:
-    {{ pelicula.apta_todo_publico|yesno:"Si,No" }}
-</p>
+    <p>
+        <strong>Precio funcion nocturna:</strong>
+        ${{ precio_nocturno }}
+    </p>
 
-<h2>Descripcion</h2>
+    <p>
+        <strong>Estreno:</strong>
+        {{ pelicula.estreno|yesno:"Si,No" }}
+    </p>
 
-<p>{{ pelicula.sinopsis }}</p>
+    <p>
+        <strong>Apta para todo publico:</strong>
+        {{ pelicula.apta_todo_publico|yesno:"Si,No" }}
+    </p>
+
+    <h3>Sinopsis</h3>
+
+    <p class="sinopsis">
+        {{ pelicula.sinopsis }}
+    </p>
+
+</div>
+
+{% endblock %}

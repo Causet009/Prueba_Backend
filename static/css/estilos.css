@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #202020;
+}
+
+header {
+    background-color: #202020;
+    color: white;
+    padding: 20px;
+}
+
+.encabezado {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.encabezado img {
+    width: 65px;
+    height: 65px;
+}
+
+.encabezado h1 {
+    margin: 0;
+}
+
+.encabezado p {
+    margin: 5px 0 0;
+    color: #cccccc;
+}
+
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.resumen {
+    background-color: white;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.cartelera {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.pelicula {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.genero {
+    color: #c62828;
+    font-weight: bold;
+}
+
+.precio {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #c62828;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.boton:hover {
+    background-color: #8e0000;
+}
+
+.detalle {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.etiqueta {
+    display: inline-block;
+    background-color: #c62828;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.sinopsis {
+    line-height: 1.6;
+}

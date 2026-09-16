@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block titulo %}
+        Cine Norte
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+
+<body>
+
+<header>
+    <div class="encabezado">
+        <img src="{% static 'img/logo.svg' %}" alt="Logo Cine Norte">
+
+        <div>
+            <h1>Cine Norte</h1>
+            <p>Cartelera semanal</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    {% block contenido %}
+    {% endblock %}
+</main>
+
+</body>
+</html>
