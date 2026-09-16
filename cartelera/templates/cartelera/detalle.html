@@ -1,0 +1,29 @@
+<a href="{% url 'cartelera:inicio' %}">
+    Volver al inicio
+</a>
+
+<h1>{{ pelicula.titulo }}</h1>
+
+<p>{{ etiqueta }}</p>
+
+<p>Genero: {{ pelicula.genero }}</p>
+
+<p>Precio entrada: ${{ pelicula.precio }}</p>
+
+<p>Funcion nocturna: ${{ precio_nocturno }}</p>
+
+<p>Duracion: {{ pelicula.duracion }} minutos</p>
+
+<p>
+    Estreno:
+    {{ pelicula.estreno|yesno:"Si,No" }}
+</p>
+
+<p>
+    Apta todo publico:
+    {{ pelicula.apta_todo_publico|yesno:"Si,No" }}
+</p>
+
+<h2>Descripcion</h2>
+
+<p>{{ pelicula.sinopsis }}</p>
